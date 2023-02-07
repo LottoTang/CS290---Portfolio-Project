@@ -1,0 +1,442 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+@font-face {                
+  font-family: 'FontName';
+  src: url('FontName.woff2') format('woff2');
+} */                           
+
+/* ...or hosted services like Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;800&display=swap');
+@import '../node_modules/modern-normalize/modern-normalize.css';
+/* npm install modern-normalize 
+    Resets elements for browser consistancy.  
+        http://nicolasgallagher.com/about-normalize-css/ */
+
+/* Component-specific stylesheets, if any 
+@import "component1.css"; */
+
+/*   ----- Variables  -----  */
+:root {
+  --custom-color-name:;
+  --custom-embellishment-name:;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+/* Can alternatively define in html {} or :root {} */
+
+body {       
+    background-color: #ecf2f8;
+    box-sizing: border-box;
+    color: #1a0202;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 375px;
+    padding: 0;
+    text-align: center;  
+}
+
+/* ----- Anchors ----- Text links */
+a {}
+a:link {}
+a:hover {
+  
+}
+a:active {}
+a:visited {}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  margin-top: 40px;
+  font-size: 1.35rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  vertical-align: center;
+}
+nav a {
+  text-decoration: none;
+  margin: 15px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  background-color: #83b3b9;
+  padding: 10px;
+  color: rgb(247, 240, 240);
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+}
+
+/*  ----- Page layout blocks -----  */
+header, footer {
+    background-color: #95D3DB;
+    padding: 30px;
+    font-weight: 600;
+    margin: 0;
+    border: none;
+}
+main {}
+section {}
+  article {}
+    #topic1 {}
+    #topic2 {}
+    #gallery1 {}
+    #gallery2 {}
+div {}
+aside {}
+footer {
+    margin-top: auto;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+/*  -----  Typography  ----- */
+p {
+  font-size: 1.5rem;
+}
+br {}
+ol, ul, dl {
+  padding: 0 10px;
+}
+li {}
+dt {}
+dd {}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1b0303;
+} 
+h1 {}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {
+  border: dotted 5px;
+  border-bottom: none;
+  margin: 10px auto;
+  opacity: 50%;
+  width: 40%;
+}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {}
+
+/*  ----- Coding or instructional typography ----- */
+pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {}
+
+/*  ----- Table ----- */
+table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 10px 15px;
+}
+caption {
+  flex-basis: 100%;
+  margin: 0 10px 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+thead {
+  display: none;
+}
+
+tbody {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  max-width: 90%;
+}
+
+tfoot {}
+tr {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+  border-radius: 5px;
+  flex-basis: 50%;
+  margin: 10px 0;
+}
+  tr:nth-child(even) {}
+th {}
+td {
+  flex-basis: 100%;
+  display: block;
+}
+  td:nth-child(1) {}
+colgroup {}
+data {}
+datalist {}
+
+
+/*  ----- Form ----- */
+form {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+fieldset {
+  border: 5px solid #8abcd7;
+  display: flex;
+  max-width: 1000px;
+  margin: 0 10px 25px;
+  flex-wrap: wrap;
+}
+  legend {
+    background: #8abcd7;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+label {
+  margin: 5px;
+  flex-basis: 25%;
+  font-size: 1.3rem;
+}
+  button {
+    margin-top: 15px;
+    background: #8abcd7;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  input {
+    padding: 5px;
+    text-align: center;
+    flex-basis: 50%;
+    min-width: 50%
+  }
+
+  input:focus {
+    background-color: #ecf2f8;
+  }
+
+  input:invalid:not([value=""]) {
+    border: 3px solid red;
+  }
+
+  output {}
+  meter {}
+  progress {}
+  select {
+    padding: 5px;
+    flex-basis: 50%;
+    text-align: center;
+    min-width: 50%
+  }
+
+  select:focus {
+    background-color: #ecf2f8;
+  }
+
+    optgroup {}
+    option {}
+  textarea {}
+
+/* ----- Media ----- */
+figure {}
+  figcaption {}
+img {}
+svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {}
+
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {}
+
+/* speicifc class*/
+.logo {
+    width: 95%;
+}
+
+.icon {
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+.row-icon:hover {
+  cursor: pointer;
+}
+
+/* for adding data*/
+.form-container {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-basis: 100%;
+  padding: 5px 0;
+}
+
+.col:before {
+  color: #6C7A89;
+  padding-right: 10px;
+  content: attr(data-label);
+  flex-basis: 50%;
+  text-align: right;
+}
+
+.social-icon {
+  font-size: 35px;
+  margin: 0 20px;
+}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 576px) {
+
+  nav {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  nav a {
+    padding: 20px 0;
+  }
+
+  
+  table {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  thead {
+    display: flex;
+    flex-basis: 100%;
+    background-color: #83b3b9;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    border-radius: 5px;
+    padding: 10px 25px;
+  }
+
+  tr {
+    display: flex;
+    box-shadow: none;
+    border-radius: 0;
+    flex-basis: 100%;
+    margin: 10px 0;
+  }
+
+  tbody {
+    max-width: 100%;
+  }
+
+  tbody tr {
+    padding: 10px 25px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #ced6dd;
+  }
+
+  tbody tr:hover {
+    transform: scale(1.02);
+  }
+
+  .col:before {
+    display: none;
+  }
+
+  .col-1 {
+    flex-basis: 30%;
+  }
+
+  .col-2, .col-3, .col-4, .col-6, .col-7 {
+    flex-basis: 15%;
+  }
+
+  .col-5 {
+    flex-basis: 25%;
+  }
+
+  .logo {
+    max-width: 70%;
+  }
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
+
