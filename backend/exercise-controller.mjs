@@ -35,15 +35,13 @@ app.use(cors(options));
 app.use(express.json());
 app.use(
     cors({
-        origin: ["http://localhost:3000", "https://cs290-workout.onrender.com"],
+        origin: ["http://localhost:3000", "https://cs290-workout-api.onrender.com"],
     })
 );
 
-const url = 'https://cs290-workout-api.onrender.com';
-
 // CREATE controller ******************************************
 // create middleware to check the incoming data is valid or not
-app.post (url + '/exercises', validSchema, validateRequestSchema, (req, res) => {
+app.post ('/exercises', validSchema, validateRequestSchema, (req, res) => {
     
     // middleware will guard the invalid schema and show error messages
     // only the valid schema will go through the following code
@@ -69,7 +67,7 @@ app.post (url + '/exercises', validSchema, validateRequestSchema, (req, res) => 
         
 // RETRIEVE controller ****************************************************
 // GET exercise by ID
-app.get(url + '/exercises/:_id', (req, res) => {
+app.get('/exercises/:_id', (req, res) => {
     const exerciseId = req.params._id;
     // get the document by ID
     exercises.findById(exerciseId)
@@ -90,7 +88,7 @@ app.get(url + '/exercises/:_id', (req, res) => {
 });
 
 // GET exercises filtered by any of the properties
-app.get(url + '/exercises', (req, res) => {
+app.get('/exercises', (req, res) => {
     let filter = {};
     // set up the filter 
     if(req.query.name !== undefined){
@@ -128,7 +126,7 @@ app.get(url + '/exercises', (req, res) => {
 });
 
 // DELETE Controller ******************************
-app.delete(url + '/exercises/:_id', (req, res) => {
+app.delete('/exercises/:_id', (req, res) => {
     // delete the specific ID
     exercises.deleteById(req.params._id)
         .then(deletedCount => {
@@ -148,7 +146,7 @@ app.delete(url + '/exercises/:_id', (req, res) => {
 });
 
 // UPDATE controller ************************************
-app.put(url + '/exercises/:_id', validSchema, validateRequestSchema, (req, res) => {
+app.put('/exercises/:_id', validSchema, validateRequestSchema, (req, res) => {
     
     // middleware will guard the invalid schema and show error messages
     // only the valid schema will go through the following code
