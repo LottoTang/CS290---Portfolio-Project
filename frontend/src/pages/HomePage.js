@@ -3,7 +3,7 @@ import ExerciseList from '../components/ExerciseList';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const url = 'https://cs290-workout.onrender.com/';
+const url = 'https://cs290-workout-api.onrender.com';
 
 function HomePage({ setExercise }) {
     // Use the history for updating

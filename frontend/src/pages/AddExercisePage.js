@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-const url = 'https://cs290-workout.onrender.com/';
+const url = 'https://cs290-workout-api.onrender.com';
 
 export const AddExercisePage = () => {
 
