@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useState } from 'react';
 
+const url = 'https://cs290-workout-api.onrender.com/';
+
 export const EditExercisePage = ({ exercise }) => {
  
     // pre-set the content with that exercise
@@ -24,7 +26,7 @@ export const EditExercisePage = ({ exercise }) => {
 
     const editExercise = async () => {
         //makes an HTTP request to the endpoint PUT /exericses/${exercise._id} of the REST API
-        const response = await fetch(`/exercises/${exercise._id}`, {
+        const response = await fetch(url + `/exercises/${exercise._id}`, {
             method: 'PUT',
             body: JSON.stringify({ 
                 name: name, 
@@ -42,7 +44,7 @@ export const EditExercisePage = ({ exercise }) => {
             const errMessage = await response.json();
             alert(`Failed to update document. Status ${response.status}. ${errMessage.Error}`);
         }
-        history.push("/");
+        history.push(url + "/");
     }
 
     return (

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
+const url = 'https://cs290-workout-api.onrender.com/';
+
 export const AddExercisePage = () => {
 
     const [name, setName] = useState('');
@@ -13,7 +15,7 @@ export const AddExercisePage = () => {
 
     const addExercise = async () => {
         const newExercise = { name, reps, weight, unit, date };
-        const response = await fetch('/exercises', {
+        const response = await fetch(url + '/exercises', {
             method: 'post',
             body: JSON.stringify(newExercise),
             headers: {
@@ -26,7 +28,7 @@ export const AddExercisePage = () => {
             const errMessage = await response.json();
             alert(`Failed to add exercise, status code = ${response.status}. \n${errMessage.Error}`);
         }
-        history.push("/");
+        history.push(url + "/");
     };
 
     return (
