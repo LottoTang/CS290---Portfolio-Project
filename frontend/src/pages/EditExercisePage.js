@@ -44,7 +44,7 @@ export const EditExercisePage = ({ exercise }) => {
             const errMessage = await response.json();
             alert(`Failed to update document. Status ${response.status}. ${errMessage.Error}`);
         }
-        history.push(url + "/");
+        history.push("/");
     }
 
     return (

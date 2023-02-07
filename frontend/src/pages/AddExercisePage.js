@@ -28,7 +28,7 @@ export const AddExercisePage = () => {
             const errMessage = await response.json();
             alert(`Failed to add exercise, status code = ${response.status}. \n${errMessage.Error}`);
         }
-        history.push(url + "/");
+        history.push("/");
     };
 
     return (
