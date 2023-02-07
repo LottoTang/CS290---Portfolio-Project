@@ -14,7 +14,7 @@ function HomePage({ setExercise }) {
 
     // RETRIEVE the list of movies
     const loadExercises = async () => {
-        const response = await fetch(url + '/exercises');
+        const response = await fetch('/exercises');
         const exercises = await response.json();
         setExercises(exercises);
     } 
