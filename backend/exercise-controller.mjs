@@ -24,8 +24,20 @@ import validSchema from './middleware/validate-schema.mjs';
 const PORT = process.env.PORT;
 const app = express();
 
+const allowedOrigins = ['http://localhost:3000'];
+
+const options = cors.CorsOptions = {
+  origin: allowedOrigins
+};
+
+app.use(cors(options));
+
 app.use(express.json());
-app.use(cors);
+app.use(
+    cors({
+        origin: ["http://localhost:3000", "https://cs290-workout.onrender.com"],
+    })
+);
 
 // CREATE controller ******************************************
 // create middleware to check the incoming data is valid or not
