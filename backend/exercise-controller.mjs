@@ -23,6 +23,8 @@ import validSchema from './middleware/validate-schema.mjs';
 
 const PORT = process.env.PORT;
 
+const app = express();
+
 app.use(function(req, res, next) {
     // res.header("Access-Control-Allow-Origin", "*");
     const allowedOrigins = ['http://localhost:3000', 'https://cs290-workout.onrender.com', 'https://cs290-workout.onrender.com'];
@@ -35,8 +37,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
     next();
   });
-
-const app = express();
 
 app.use(express.json());
 
