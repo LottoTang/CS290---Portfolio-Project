@@ -15,6 +15,7 @@
 import 'dotenv/config';
 import express from 'express';
 import * as exercises from './exercise-model.mjs';
+import cors from 'cors';
 
 // middleware for validating the incoming request
 import validateRequestSchema from './middleware/validate-request-schema.mjs';
@@ -22,7 +23,9 @@ import validSchema from './middleware/validate-schema.mjs';
 
 const PORT = process.env.PORT;
 const app = express();
+
 app.use(express.json());
+app.use(cors);
 
 // CREATE controller ******************************************
 // create middleware to check the incoming data is valid or not
