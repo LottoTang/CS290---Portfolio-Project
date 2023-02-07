@@ -39,7 +39,7 @@ export const EditExercisePage = ({ exercise }) => {
         });
 
         if (response.status === 200) {
-            alert("Successfully edited document!");
+            alert("Successfully edited the exercise!");
         } else {
             const errMessage = await response.json();
             alert(`Failed to update document. Status ${response.status}. ${errMessage.Error}`);

@@ -32,6 +32,7 @@ function HomePage({ setExercise }) {
             const getResponse = await fetch(url+'/exercises');
             const exercises = await getResponse.json();
             setExercises(exercises);
+            alert("Successfully deleted the exercise!");
         } else {
             console.error(`Failed to delete exercise with _id = ${_id}, status code = ${response.status}`)
         }
