@@ -27,9 +27,9 @@ function HomePage({ setExercise }) {
 
     // DELETE a movie  
     const onDeleteExercise = async _id => {
-        const response = await fetch(`/exercises/${_id}`, { method: 'DELETE' });
+        const response = await fetch(url+`/exercises/${_id}`, { method: 'DELETE' });
         if (response.status === 204) {
-            const getResponse = await fetch('/exercises');
+            const getResponse = await fetch(url+'/exercises');
             const exercises = await getResponse.json();
             setExercises(exercises);
         } else {
