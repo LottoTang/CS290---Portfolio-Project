@@ -3,6 +3,8 @@ import ExerciseList from '../components/ExerciseList';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
+const url = "https://cs290-workout-api.onrender.com/";
+
 function HomePage({ setExercise }) {
     // Use the history for updating
     const history = useHistory();
@@ -12,7 +14,7 @@ function HomePage({ setExercise }) {
 
     // RETRIEVE the list of movies
     const loadExercises = async () => {
-        const response = await fetch('/exercises');
+        const response = await fetch(url+'/exercises');
         const exercises = await response.json();
         setExercises(exercises);
     } 
