@@ -28,14 +28,16 @@ function HomePage({ setExercise }) {
     // DELETE a movie  
     const onDeleteExercise = async _id => {
         const response = await fetch(url+`/exercises/${_id}`, { method: 'DELETE' });
-        if (response.status === 204) {
+        if (response.status === 200) {
+            alert("Successfully deleted the exercise!");
             const getResponse = await fetch(url+'/exercises');
             const exercises = await getResponse.json();
             setExercises(exercises);
-            alert("Successfully deleted the exercise!");
+
         } else {
             console.error(`Failed to delete exercise with _id = ${_id}, status code = ${response.status}`)
         }
+        history.push("/");
     }
 
     // LOAD the exercises
